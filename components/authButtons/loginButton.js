@@ -1,6 +1,6 @@
 import { signIn } from '../../utils/auth';
 
-// THE GOOGLE LOGIN BUTTON
+// GOOGLE LOGIN BUTTON
 const loginButton = () => {
   const domString = '<button id="google-auth" class="btn btn-danger">GOOGLE LOGIN</button>';
   document.querySelector('#app').innerHTML = domString;
