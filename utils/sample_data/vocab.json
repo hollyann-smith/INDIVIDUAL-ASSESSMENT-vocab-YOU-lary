@@ -1,0 +1,52 @@
+{
+    "-NI51vOlC4m7r4yA96hd": {
+      "category_id": "-MiBsfuTafbEQ7eAULxV",
+      "definition": "A container for storing data values, identified by a unique name.",
+      "favorite": false,
+      "firebaseKey": "-NI51vOlC4m7r4yA96hd",
+      "public": false,
+      "timeSubmitted": "2023-12-04T00:59:10.780Z",
+      "title": "Variable",
+      "uid": ""
+    },
+    "-NI9KbLUCDc1lKoIyo7o": {
+      "category_id": "-MiBsfuTafbEQ7eAULxV",
+      "definition": "How to indicate true or false in coding.",
+      "favorite": true,
+      "firebaseKey": "-NI9KbLUCDc1lKoIyo7o",
+      "public": true,
+      "timeSubmitted": "2023-12-03T18:52:20.531Z",
+      "title": "Boolean",
+      "uid": "ScVTWWU4fEf9wcOzb4HUF19SWqd2"
+    },
+    "-NI9KppXdPh62Pa7c8hI": {
+      "category_id": "-MiBt86VzkC-EGmJnxjm",
+      "definition": "A statement that performs different actions depending on whether a condition is true or false.",
+      "favorite": true,
+      "firebaseKey": "-NI9KppXdPh62Pa7c8hI",
+      "public": false,
+      "timeSubmitted": "2023-12-03T18:52:20.531Z",
+      "title": "Conditional Statement",
+      "uid": ""
+    },
+    "-NI9L4KlqlvyNzRxOOza": {
+      "category_id": "MiBtwf1BwN9pGavQeR3",
+      "definition": "A layout model in CSS that allows design of complex layouts and aligning items within a container.",
+      "favorite": true,
+      "firebaseKey": "-NI9L4KlqlvyNzRxOOza",
+      "public": false,
+      "timeSubmitted": "2023-12-01T21:01:12.375Z",
+      "title": "Flexbox",
+      "uid": ""
+    },
+    "-NI9LIptjuRuIVIapsvI": {
+      "ccategory_id": "-MiBuOfHv9NCKB_cneij",
+      "definition": " An instruction to the web browser about the version of HTML in the document.",
+      "favorite": false,
+      "firebaseKey": "-NI9LIptjuRuIVIapsvI",
+      "public": true,
+      "timeSubmitted": "2023-12-02T21:02:03.673Z",
+      "title": "DOCTYPE",
+      "uid": ""
+    }
+  }
