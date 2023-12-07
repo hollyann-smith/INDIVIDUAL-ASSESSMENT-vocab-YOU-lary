@@ -6,28 +6,34 @@ const emptyCards = () => {
   renderToDOM('#store', domString);
 };
 
+const showButtonRow = (array) => {
+  let btnString = '';
+  const categoryNames = array.map((obj) => obj.category_name);
+  console.warn('category names', categoryNames);
+  console.warn('category named', categoryNames.filter((value, index, categoryArray) => categoryArray.indexOf(value) === index));
+  categoryNames.filter((value, index, categoryArray) => categoryArray.indexOf(value) === index).forEach((itemName) => {
+    btnString += `<button class="btn btn-success btn-lg mb-4" id=${itemName}>${itemName}</button>`;
+  });
+  renderToDOM('#button-row', btnString);
+};
+
 const showCards = (array) => {
   clearDom();
-
-  const btnString = '<button class="btn btn-success btn-lg mb-4" id="add-vocab-btn">Add A Vocab Card</button>';
-  renderToDOM('#add-button', btnString);
 
   let domString = '';
   array.forEach((item) => {
     domString += `
-      <div class="card">
-        <img class="card-img-top" alt=${item.title} style="height: 400px;">
-        <div class="card-body" style="height: 180px;">
-          <h5 class="card-title">${item.title}</h5>
-          <h3 class="card-description">${item.definition}</h3>
-            <hr>
-            <i class="btn btn-success fas fa-eye" id="view-vocab-btn--${item.firebaseKey}"></i>
-            <i id="edit-vocab-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info"></i>
-            <i id="delete-vocab-btn--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
-        </div>
-      </div>`;
+    <div class="card border-success mb-3" style="max-width: 18rem;">
+  <div class="card-header bg-transparent border-success" alt=${item.category_name} >${item.category_name}</div>
+  <div class="card-body text-success">
+    <h5 class="card-title">${item.title}</h5>
+    <p class="card-definition">${item.definition}</p>
+  </div>
+  <div class="card-footer bg-transparent border-success">            <i id="edit-vocab-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info"></i>
+  <i id="delete-vocab-btn--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i></div>
+</div>`;
   });
   renderToDOM('#store', domString);
 };
 
-export { showCards, emptyCards };
+export { showCards, emptyCards, showButtonRow };
