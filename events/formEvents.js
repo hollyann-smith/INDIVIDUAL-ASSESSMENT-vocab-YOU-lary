@@ -9,11 +9,13 @@ const formEvents = (user) => {
     // CLICK EVENT FOR SUBMITTING FORM FOR ADDING A VOCAB CARD
     if (e.target.id.includes('submit-vocab')) {
       const date = new Date();
+      console.warn(document.querySelector('#category_id').selectedOptions[0].id);
       const payload = {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
-        category_id: document.querySelector('#category_id').value,
+        category_id: document.querySelector('#category_id').selectedOptions[0].id,
         favorite: document.querySelector('#favorite').checked,
+        category_name: document.querySelector('#category_id').value,
         uid: user.uid,
         timeSubmitted: date,
       };
@@ -40,36 +42,6 @@ const formEvents = (user) => {
         getVocabCard(user.uid).then(showCards);
       });
     }
-
-    // // ADD CLICK EVENT FOR SUBMITTING FORM FOR ADDING AN AUTHOR
-    // if (e.target.id.includes('submit-author')) {
-    //   const payload = {
-    //     first_name: document.querySelector('#first_name').value,
-    //     last_name: document.querySelector('#last_name').value,
-    //     email: document.querySelector('#email').value,
-    //     uid: user.uid,
-    //   };
-    //   createAuthor(payload).then(({ name }) => {
-    //     const patchPayload = { firebaseKey: name };
-    //     updateAuthor(patchPayload).then(() => {
-    //       getAuthors(user.uid).then(showAuthors);
-    //     });
-    //   });
-    // }
-    // // ADD CLICK EVENT FOR EDITING AN AUTHOR
-    // if (e.target.id.includes('update-author')) {
-    //   const [, firebaseKey] = e.target.id.split('--');
-    //   const payload = {
-    //     first_name: document.querySelector('#first_name').value,
-    //     last_name: document.querySelector('#last_name').value,
-    //     email: document.querySelector('#email').value,
-    //     firebaseKey,
-    //   };
-
-    //   updateAuthor(payload).then(() => {
-    //     getAuthors(user.uid).then(showAuthors);
-    //   });
-    // }
   });
 };
 

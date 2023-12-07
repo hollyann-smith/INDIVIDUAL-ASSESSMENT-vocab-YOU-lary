@@ -10,7 +10,7 @@ const selectCategory = (uid, categoryId) => {
     categoryArray.forEach((category) => {
       domString += `
           <option 
-            value="${category.firebaseKey}" 
+            id="${category.firebaseKey}" 
             ${categoryId === category.firebaseKey ? 'selected' : ''}>
               ${category.category}
           </option>`;

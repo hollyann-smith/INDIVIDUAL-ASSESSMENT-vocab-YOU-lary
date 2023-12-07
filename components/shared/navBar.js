@@ -10,10 +10,13 @@ const navBar = () => {
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#" id="all-vocab">
+            <li class="nav-item active">  
+            <a class="nav-link" href="#" id="all-vocab">
                 All Vocab Cards <span class="sr-only">(current)</span>
               </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="add-vocab-btn">Add Vocab Card</a>
             </li>
             <li>
             <input

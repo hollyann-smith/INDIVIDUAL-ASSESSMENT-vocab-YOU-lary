@@ -5,7 +5,7 @@ import navBar from '../components/shared/navBar';
 import domEvents from '../events/domEvents';
 import formEvents from '../events/formEvents';
 import navigationEvents from '../events/navigationEvents';
-import { showCards } from '../pages/vocab';
+import { showButtonRow, showCards } from '../pages/vocab';
 
 const startApp = (user) => {
   domBuilder(console.warn('started app', user.uid)); // BUILD THE DOM
@@ -16,6 +16,7 @@ const startApp = (user) => {
   navigationEvents(user); // ATTACH THE EVENT LISTENERS TO THE NAVBAR
 
   getVocabCard(user.uid).then((vocab) => showCards(vocab));
+  getVocabCard(user.uid).then((vocab) => showButtonRow(vocab));
 };
 
 export default startApp;

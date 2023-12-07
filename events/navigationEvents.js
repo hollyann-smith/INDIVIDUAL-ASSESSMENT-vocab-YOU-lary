@@ -1,41 +1,28 @@
 import { signOut } from '../utils/auth';
-// import { getAuthors, getFavoriteAuthor } from '../api/authorData';
-// import { showAuthors } from '../pages/authors';
 import { showCards } from '../pages/vocab';
 import { getVocabCard } from '../api/vocabData';
+import addVocabForm from '../components/forms/addVocabForm';
 
-// navigation events
 const navigationEvents = (user) => {
   // LOGOUT BUTTON
   document.querySelector('#logout-button')
     .addEventListener('click', signOut);
 
-  // BOOKS ON SALE
+  // CLICK EVENT FOR SHOWING FORM FOR ADDING A VOCAB
+  document.querySelector('#add-vocab-btn').addEventListener('click', () => {
+    addVocabForm(user.uid);
+  });
+  // BOOKS Public / Private
   // document.querySelector('#sale-books').addEventListener('click', () => {
   //   vocabByLanguage(user.uid).then(showCards);
   //   console.warn('CLICKED SALE BOOKS');
   // });
 
-  // ALL BOOKS
+  // ALL CARDS
   document.querySelector('#all-vocab').addEventListener('click', () => {
     getVocabCard(user.uid).then(showCards);
-    console.warn('CLICKED ALL BOOKS');
+    console.warn('CLICKED ALL CARDS');
   });
-
-  // STUDENTS Create an event listener for the Authors
-  // 1. When a user clicks the authors link, make a call to firebase to get all authors
-  // 2. Convert the response to an array because that is what the makeAuthors function is expecting
-  // 3. If the array is empty because there are no authors, make sure to use the emptyAuthor function
-  // document.querySelector('#authors').addEventListener('click', () => {
-  //   getAuthors(user.uid).then(showAuthors);
-  //   console.warn('CLICKED AUTHORS');
-  // });
-
-  // // FAVORITE AUTHORS
-  // document.querySelector('#favorite-authors').addEventListener('click', () => {
-  //   getFavoriteAuthor(user.uid).then(showAuthors);
-  //   console.warn('CLICKED FAVORITE AUTHOR');
-  // });
 
   // STRETCH: SEARCH
   document.querySelector('#search').addEventListener('keyup', (e) => {
