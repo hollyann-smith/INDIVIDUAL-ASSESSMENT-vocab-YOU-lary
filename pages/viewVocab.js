@@ -5,20 +5,17 @@ const viewVocabCard = (obj) => {
   clearDom();
 
   const domString = `
-  <div class="mt-5 d-flex flex-wrap">
-   <div class="d-flex flex-column">
-     <img src=${obj.image} alt=${obj.title} style="width: 300px;">
-     <div class="mt-5">
-       <i id="edit-vocab-btn--${obj.firebaseKey}" class="fas fa-edit btn btn-info"></i>
-       <i id="delete-vocab--${obj.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
-     </div>
-   </div>
-   <div class="text-white ms-5 details">
-     <h5>${obj.title} by ${obj.authorObject.first_name} ${obj.categoryObject.last_name} ${obj.categoryObject.favorite ? '<span class="badge bg-danger"><i class="fa fa-heart" aria-hidden="true"></i></span>' : ''}</h5>
-     <p>${obj.description || ''}</p>
-     <hr>
-      </div>
-    </div>`;
+    <div id="card" class="card border-success mb-3" style="max-width: 18rem;">
+  <div class="card-header bg-transparent border-success">Header</div>
+  <div class="card-body text-success">
+    <h5 id="language" class="card-title">${obj.title}</h5>
+    <p class="card-text">${obj.description || ''}</p>
+  </div>
+  <div class="card-footer bg-transparent border-success">
+  <i id="edit-vocab-btn--${obj.firebaseKey}" class="fas fa-edit btn btn-info"></i>
+    <i id="delete-vocab--${obj.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
+  </div>
+</div>`;
 
   renderToDOM('#view', domString);
 };

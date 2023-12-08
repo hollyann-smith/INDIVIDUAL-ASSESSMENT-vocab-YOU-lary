@@ -1,7 +1,12 @@
-import { deleteVocabCard, getVocabCard, getSingleVocabCard } from '../api/vocabData';
+import {
+  deleteVocabCard,
+  getVocabCard,
+  getSingleVocabCard,
+
+}
+  from '../api/vocabData';
 import { showCards } from '../pages/vocab';
 import addVocabForm from '../components/forms/addVocabForm';
-// import viewVocabCard from '../pages/viewVocab';
 
 const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -17,11 +22,17 @@ const domEvents = (user) => {
       }
     }
 
+    // filter by category
+    document.querySelector('#category-btn').addEventListener('click', () => {
+      console.warn('clicked category');
+      // vocabByLanguage(user.category_name).then(showCards);
+    });
+
     // CLICK EVENT EDITING/UPDATING A VOCAB
     if (e.target.id.includes('edit-vocab-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
 
-      getSingleVocabCard(firebaseKey).then((vocabObj) => addVocabForm(vocabObj));
+      getSingleVocabCard(firebaseKey).then((vocabObj) => addVocabForm(user.uid, vocabObj));
     }
   });
 };
