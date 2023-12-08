@@ -3,6 +3,8 @@ import renderToDOM from '../../utils/renderToDom';
 import selectCategory from './selectCategory';
 
 const addVocabForm = (uid, obj = {}) => {
+  console.warn('uid', uid);
+  console.warn('obj', obj);
   clearDom();
   const domString = `
     <form id="${obj.firebaseKey ? `update-vocab--${obj.firebaseKey}` : 'submit-vocab'}" class="mb-4">
@@ -15,10 +17,6 @@ const addVocabForm = (uid, obj = {}) => {
         <textarea class="form-control" placeholder="Vocab Definition" id="definition" style="height: 100px">${obj.definition || ''}</textarea>
       </div>
       <div class="form-group" id="select-category">
-      </div>
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="favorite" ${obj.favorite ? 'checked' : ''}>
-        <label class="form-check-label" for="favorite">Favorite?</label>
       </div>
       <button type="submit" class="btn btn-primary">Submit Vocab Card
       </button>

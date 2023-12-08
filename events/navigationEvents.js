@@ -1,5 +1,5 @@
 import { signOut } from '../utils/auth';
-import { showCards } from '../pages/vocab';
+import { showButtonRow, showCards } from '../pages/vocab';
 import { getVocabCard } from '../api/vocabData';
 import addVocabForm from '../components/forms/addVocabForm';
 
@@ -12,17 +12,21 @@ const navigationEvents = (user) => {
   document.querySelector('#add-vocab-btn').addEventListener('click', () => {
     addVocabForm(user.uid);
   });
-  // BOOKS Public / Private
-  // document.querySelector('#sale-books').addEventListener('click', () => {
-  //   vocabByLanguage(user.uid).then(showCards);
-  //   console.warn('CLICKED SALE BOOKS');
-  // });
 
   // ALL CARDS
   document.querySelector('#all-vocab').addEventListener('click', () => {
-    getVocabCard(user.uid).then(showCards);
+    getVocabCard(user.uid).then((vocab) => {
+      showCards(vocab);
+      showButtonRow(vocab);
+    });
     console.warn('CLICKED ALL CARDS');
   });
+
+  // filter by category
+  // document.querySelectorAll('#category-btn').addEventListener('click', () => {
+  //   console.warn('clicked category');
+  //   vocabByLanguage(user.uid).then(showCards);
+  // });
 
   // STRETCH: SEARCH
   document.querySelector('#search').addEventListener('keyup', (e) => {
@@ -31,13 +35,6 @@ const navigationEvents = (user) => {
 
     // WHEN THE USER PRESSES ENTER, MAKE THE API CALL AND CLEAR THE INPUT
     if (e.keyCode === 13) {
-      // const searchValue = document.querySelector('#search').value.toLowerCase();
-      // getBooks(user.uid).then((arr) => {
-      //   const filteredBooks = arr.filter((item) => item.title.toLowerCase().includes(searchValue)
-      //     || item.authorObject.first_name.toLowerCase().includes(searchValue)
-      //     || item.authorObject.last_name.toLowerCase().includes(searchValue));
-      //   showBooks(filteredBooks);
-      // });
       document.querySelector('#search').value = '';
     }
   });

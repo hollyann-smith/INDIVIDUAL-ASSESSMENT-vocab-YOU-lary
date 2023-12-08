@@ -14,7 +14,6 @@ const formEvents = (user) => {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
         category_id: document.querySelector('#category_id').selectedOptions[0].id,
-        favorite: document.querySelector('#favorite').checked,
         category_name: document.querySelector('#category_id').value,
         uid: user.uid,
         timeSubmitted: date,
@@ -32,9 +31,8 @@ const formEvents = (user) => {
       const [, firebaseKey] = e.target.id.split('--');
       const payload = {
         title: document.querySelector('#title').value,
-        definition: document.querySelector('#definiton').value,
+        definition: document.querySelector('#definition').value,
         category_id: document.querySelector('#category_id').value,
-        favorite: document.querySelector('#favorite').checked,
         firebaseKey,
       };
 

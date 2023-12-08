@@ -12,7 +12,7 @@ const showButtonRow = (array) => {
   console.warn('category names', categoryNames);
   console.warn('category named', categoryNames.filter((value, index, categoryArray) => categoryArray.indexOf(value) === index));
   categoryNames.filter((value, index, categoryArray) => categoryArray.indexOf(value) === index).forEach((itemName) => {
-    btnString += `<button class="btn btn-success btn-lg mb-4" id=${itemName}>${itemName}</button>`;
+    btnString += `<button id="category-btn" class="btn btn-success btn-lg mb-4" id=${itemName}>${itemName}</button>`;
   });
   renderToDOM('#button-row', btnString);
 };

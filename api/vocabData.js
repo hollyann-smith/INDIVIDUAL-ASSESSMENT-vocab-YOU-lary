@@ -75,18 +75,15 @@ const updateVocabCard = (payload) => new Promise((resolve, reject) => {
 });
 
 //  Filter Vocab cards by language category
-const vocabByLanguage = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json?orderBy="uid"&equalTo="${uid}"`, {
+const vocabByLanguage = (categoryName) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="category_name"&equalTo="${categoryName}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => {
-      const byLanguage = Object.values(data).filter((item) => item.language);
-      resolve(byLanguage);
-    })
+    .then((data) => resolve(data))
     .catch(reject);
 });
 
