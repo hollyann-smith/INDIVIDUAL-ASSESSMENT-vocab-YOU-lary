@@ -18,6 +18,7 @@ const showButtonRow = (array) => {
 };
 
 const showCards = (array) => {
+  console.warn('showCards array', array);
   clearDom();
 
   let domString = '';

@@ -2,10 +2,10 @@ import {
   deleteVocabCard,
   getVocabCard,
   getSingleVocabCard,
-
+  vocabByLanguage
 }
   from '../api/vocabData';
-import { showCards } from '../pages/vocab';
+import { showButtonRow, showCards } from '../pages/vocab';
 import addVocabForm from '../components/forms/addVocabForm';
 
 const domEvents = (user) => {
@@ -23,9 +23,17 @@ const domEvents = (user) => {
     }
 
     // filter by category
-    document.querySelector('#category-btn').addEventListener('click', () => {
-      console.warn('clicked category');
-      // vocabByLanguage(user.category_name).then(showCards);
+    const btnRow = document.querySelectorAll('#category-btn');
+    btnRow.forEach((item) => {
+      item.addEventListener('click', () => {
+        // const catergory = item.dataset.catergory_name;
+        console.warn('clicked category', item.innerHTML);
+        // vocabByLanguage(item.innerHTML).then(showCards);
+        vocabByLanguage(item.innerHTML).then((match) => {
+          showCards(match);
+          showButtonRow(match);
+        });
+      });
     });
 
     // CLICK EVENT EDITING/UPDATING A VOCAB
