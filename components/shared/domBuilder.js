@@ -11,6 +11,7 @@ const domBuilder = () => {
   </div>`;
 
   renderToDOM('#app', domString);
+  renderToDOM('#header', ' ');
 };
 
 export default domBuilder;

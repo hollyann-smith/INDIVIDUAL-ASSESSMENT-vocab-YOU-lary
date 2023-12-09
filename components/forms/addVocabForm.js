@@ -1,4 +1,4 @@
-import clearDom from '../../utils/clearDom';
+import { clearDom } from '../../utils/clearDom';
 import renderToDOM from '../../utils/renderToDom';
 import selectCategory from './selectCategory';
 
