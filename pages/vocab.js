@@ -1,4 +1,4 @@
-import clearDom from '../utils/clearDom';
+import { clearDom } from '../utils/clearDom';
 import renderToDOM from '../utils/renderToDom';
 
 const emptyCards = () => {
@@ -8,9 +8,8 @@ const emptyCards = () => {
 
 const showButtonRow = (array) => {
   let btnString = '';
-  const categoryNames = array.map((obj) => obj.category_name);
-  console.warn('category names', categoryNames);
-  console.warn('category named', categoryNames.filter((value, index, categoryArray) => categoryArray.indexOf(value) === index));
+  const categoryNames = array.map((obj) => obj.category_name); // creating new array of just category names
+
   categoryNames.filter((value, index, categoryArray) => categoryArray.indexOf(value) === index).forEach((itemName) => {
     btnString += `<button id="category-btn" class="btn btn-success btn-lg mb-4" id=${itemName}>${itemName}</button>`;
   });
@@ -24,13 +23,13 @@ const showCards = (array) => {
   let domString = '';
   array.forEach((item) => {
     domString += `
-    <div class="card border-success mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-transparent border-success" alt=${item.category_name} >${item.category_name}</div>
-  <div class="card-body text-success">
+    <div class="card border-light mb-3" style="max-width: 18rem;">
+  <div class="card-header bg-transparent border-light" alt=${item.category_name} >${item.category_name}</div>
+  <div class="card-body text-light">
     <h5 class="card-title">${item.title}</h5>
     <p class="card-definition">${item.definition}</p>
   </div>
-  <div class="card-footer bg-transparent border-success">            <i id="edit-vocab-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info"></i>
+  <div class="card-footer bg-transparent border-light">            <i id="edit-vocab-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info"></i>
   <i id="delete-vocab-btn--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i></div>
 </div>`;
   });

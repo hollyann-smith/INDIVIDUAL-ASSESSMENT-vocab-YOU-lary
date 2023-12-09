@@ -5,7 +5,7 @@ const viewVocabCard = (obj) => {
   clearDom();
 
   const domString = `
-    <div id="card" class="card border-success mb-3" style="max-width: 18rem;">
+    <div id="card" class="card border-light mb-3" style="max-width: 18rem; ">
   <div class="card-header bg-transparent border-success">Header</div>
   <div class="card-body text-success">
     <h5 id="language" class="card-title">${obj.title}</h5>

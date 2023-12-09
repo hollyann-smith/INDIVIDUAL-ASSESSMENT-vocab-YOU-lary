@@ -22,22 +22,16 @@ const navigationEvents = (user) => {
     console.warn('CLICKED ALL CARDS');
   });
 
-  // filter by category
-  // document.querySelectorAll('#category-btn').addEventListener('click', () => {
-  //   console.warn('clicked category');
-  //   vocabByLanguage(user.uid).then(showCards);
-  // });
-
   // STRETCH: SEARCH
-  document.querySelector('#search').addEventListener('keyup', (e) => {
-    // const searchValue = document.querySelector('#search').value.toLowerCase();
-    // console.warn(searchValue);
+  // document.querySelector('#search').addEventListener('keyup', (e) => {
+  //   const searchValue = document.querySelector('#search').value.toLowerCase();
+  //   console.warn(searchValue);
 
-    // WHEN THE USER PRESSES ENTER, MAKE THE API CALL AND CLEAR THE INPUT
-    if (e.keyCode === 13) {
-      document.querySelector('#search').value = '';
-    }
-  });
+  //   // WHEN THE USER PRESSES ENTER, MAKE THE API CALL AND CLEAR THE INPUT
+  //   if (e.keyCode === 13) {
+  //     document.querySelector('#search').value = '';
+  //   }
+  // });
 };
 
 export default navigationEvents;
