@@ -18,6 +18,9 @@ git@github.com:hollyann-smith/INDIVIDUAL-ASSESSMENT-vocab-YOU-lary.git
 - Filter cards based on category on button click.
 - Add / Edit / and Delete vocab cards.
 
+## Flow Chart: [vocabYOUlary.pdf](https://github.com/hollyann-smith/INDIVIDUAL-ASSESSMENT-vocab-YOU-lary/files/13625136/vocabYOUlary.pdf)
+
+
 ## Screenshots of project:
 # Welcome Page:
 <img width="1153" alt="welcomepage" src="https://github.com/hollyann-smith/INDIVIDUAL-ASSESSMENT-vocab-YOU-lary/assets/136410573/d080dc2f-4e89-46aa-a5d1-b6c9ac553e1e">
